@@ -1,0 +1,159 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Card para Título -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="Currency Converter"
+                android:textColor="#6200EE"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card para o Input de Moeda Inicial e Valor -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/spinner_from_currency"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="8dp" />
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Enter amount"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textColor="#333333" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botão de Swap entre moedas -->
+        <ImageButton
+            android:id="@+id/btn_swap"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#03DAC5"
+            android:contentDescription="Swap currencies"
+            android:src="@drawable/ic_swap" />
+
+        <!-- Card para o Spinner de Moeda Alvo e Resultado -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <Spinner
+                    android:id="@+id/spinner_to_currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_converted_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Converted Amount"
+                    android:textColor="#4CAF50"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_exchange_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Exchange Rate"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botão para limpar campos -->
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF5722"
+            android:padding="12dp"
+            android:text="LIMPAR"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
